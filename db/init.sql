@@ -1,11 +1,4 @@
-DO $$ BEGIN
-    IF NOT EXISTS (SELECT FROM pg_user WHERE usename = 'monitoring_user') THEN
-        CREATE USER monitoring_user WITH PASSWORD 'goGoMonitoro1820';
-    END IF;
-    ALTER SCHEMA public OWNER TO monitoring_user;
-END $$;
 
--- Create main monitoring main
 CREATE TABLE IF NOT EXISTS apps (
     id SERIAL PRIMARY KEY,
     app VARCHAR(255) NOT NULL,
