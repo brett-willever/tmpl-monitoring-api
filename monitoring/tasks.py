@@ -188,26 +188,3 @@ class AppInterface:
                 f"{SESSION_ID} - Recycling monitoring task and taking a power nap!"
             )
             await asyncio.sleep(60)
-
-    async def fetch_app_status(self, app_name: str) -> Dict[str, Any]:
-        logger.info(f"[external-striim] Fetching app status for {app_name}")
-        try:
-            if not STRIIM_API_URL:
-                return None
-            else:
-                # TOOOO do this
-                pass
-        except HTTPError:
-            raise
-
-    async def start_cdc(self, nodowntime_fqn: str) -> None:
-        """wrapper call to start cdc app"""
-        logger.info(f"[external-striim] Starting CDC app {nodowntime_fqn}")
-        try:
-            if not STRIIM_API_URL:
-                return None
-            else:
-                # TOOOO do this
-                pass
-        except HTTPError:
-            raise
